@@ -1,0 +1,28 @@
+@import "variables";
+
+@btn-font-weight: normal;
+@btn-color: @color;
+@btn-bg: darken(#428bca, 6.5%);
+@btn-border: darken(@btn-bg, 5%);
+
+.btn {
+    display: inline-block;
+    font-weight: @btn-font-weight;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    border-radius: 5px;
+    
+    &.btn-lg {
+        padding: 10px;
+    }
+    
+    /* TODO: Introduce types of buttons */
+    color: @btn-color;
+    background-color: @btn-bg;
+    border-color: @btn-border;   
+}
