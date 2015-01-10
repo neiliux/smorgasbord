@@ -1,0 +1,22 @@
+{
+  "name": "smorgasbord",
+  "version": "0.0.1",
+  "description": "A CSS framework for building responsive applications while providing low interference and requirements in your app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neiliux/smorgasbord"
+  },
+  "author": "Neil Breeden III",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/neiliux/smorgasbord/issues"
+  },
+  "homepage": "https://github.com/neiliux/smorgasbord",
+  "dependencies": {
+    "less": "^2.2.0"
+  }
+}
