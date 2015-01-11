@@ -1,4 +1,6 @@
-module.exports = function(config) {
+/*global module */
+module.exports = function (config) {
+    'use strict';
     config.set({
         basePath: 'test/',
         frameworks: ['jasmine'],
