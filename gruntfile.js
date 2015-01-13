@@ -12,6 +12,14 @@ module.exports = function (grunt) {
                 files: {
 				    "jquery.js": "jquery/dist/jquery.js"
                 }
+            },
+            sandbox: {
+                options: {
+                    destPrefix: "sandbox/vendor"
+                },
+                files: {
+                    "angular.js": "angular/angular.js"
+                }
             }
         },
         
@@ -68,7 +76,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-devserver");
     grunt.loadNpmTasks("grunt-contrib-watch");
     
-    grunt.registerTask("default", ["bowercopy", "less:development", "karma"]);
+    grunt.registerTask("default", ["bowercopy:test", "bowercopy:sandbox", "less:development", "karma"]);
     grunt.registerTask("production", ["less:production"]);
-    grunt.registerTask("dev", ["bowercopy", "less:development", "karma", "devserver", "watch"]);
+    grunt.registerTask("dev", ["bowercopy:test", "bowercopy:sandbox", "less:development", "karma", "devserver", "watch"]);
 };
