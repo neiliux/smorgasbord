@@ -21,7 +21,8 @@ module.exports = function (grunt) {
                     paths: ["src"]
                 },
                 files: {
-                    "test/smorgasbord-build.css": "src/smorgasbord.less"
+                    "test/smorgasbord-build.css": "src/smorgasbord.less",
+                    "dist/smorgasbord.css": "src/smorgasbord.less"
                 }
             }
         },
