@@ -17,3 +17,15 @@
 .btn.btn-lg {
   padding: 10px;
 }
+.grid:before,
+.grid:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.grid .grid-h-1-3 {
+  width: 33.33%;
+}
+.grid .grid-h-2-3 {
+  width: 66.66%;
+}

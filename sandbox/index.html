@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html data-ng-app="smorgasbord">
 <head>
     <title>Smorgasbord Sandbox</title>
     <link rel="stylesheet" type="text/css" href="smorgasbord-build.css" />
+    <script type="text/javascript" src="vendor/angular.js"></script>
+    <script type="text/javascript" src="smorgasbordApp.js"></script>
 </head>
 <body>
+    <div data-ng-controller="navigationController">
+        {{bleh}}
+    </div>
     <button class="btn">Foobar</button>
 </body>
 </html>
