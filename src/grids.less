@@ -1,20 +1,35 @@
+@grid-cell-default-float: left;
+
 .grid {
-    &:before {
-        content : '';
+    width: 100%;
+    
+    &:before,
+    &:after {
+        content: '';
         display: table;
     }
     
     &:after {
-        content: '';
-        display: table;
         clear: both;
     }
     
     .grid-h-1-3 {
         width: 33.33%;
+        float: @grid-cell-default-float;
     }
 
     .grid-h-2-3 {
         width: 66.66%;
+        float: @grid-cell-default-float;
+    }
+    
+    .grid-h-1-5 {
+        width: 20%;
+        float: @grid-cell-default-float;
+    }
+    
+    .grid-h-4-5 {
+        width: 80%;
+        float: @grid-cell-default-float;
     }
 }
