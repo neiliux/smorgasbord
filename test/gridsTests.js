@@ -1,6 +1,7 @@
-/*global define, describe, it, console, beforeEach, afterEach */
+/*global define, describe, it, console, beforeEach, afterEach, require */
 define(["jquery"], function ($) {
     "use strict";
+    var expect = require("chai").expect;
     
     // TODO: Move this to helpers.
     function getPseudoStylePropertyValue(selector, pseudoStyle, property) {
@@ -21,18 +22,16 @@ define(["jquery"], function ($) {
         });
         
         describe('Grid container', function () {
-            var selector = "div.grid";
+            var selector = "div.grid",
+                propertyKey = "display",
+                expectedDisplayPropertyValue = "table";
             
             describe(":before", function () {
                 var pseudoSelector = ":before";
                 
                 it("has clear fix display property applied", function () {
-                    var propertyValue = getPseudoStylePropertyValue(selector, pseudoSelector, "display");
-
-                    // TODO: Replace with assertion library.
-                    if (propertyValue !== "table") {
-                        throw new Error("Invalid display property");
-                    }
+                    var propertyValue = getPseudoStylePropertyValue(selector, pseudoSelector, propertyKey);
+                    expect(propertyValue).to.equal(expectedDisplayPropertyValue);
                 });
             });
             
@@ -40,12 +39,8 @@ define(["jquery"], function ($) {
                 var psuedoSelector = ":after";
                 
                 it("has clear fix display property", function () {
-                    var propertyValue = getPseudoStylePropertyValue(selector, psuedoSelector, "display");
-                    
-                    // TODO: Replace with assertion library.
-                    if (propertyValue !== "table") {
-                        throw new Error("Invalid display property");
-                    }
+                    var propertyValue = getPseudoStylePropertyValue(selector, psuedoSelector, propertyKey);
+                    expect(propertyValue).to.equal(expectedDisplayPropertyValue);
                 });
             });
         });

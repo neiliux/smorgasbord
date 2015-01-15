@@ -10,7 +10,9 @@ module.exports = function (grunt) {
 				    destPrefix: "test/bower"
                 },
                 files: {
-				    "jquery.js": "jquery/dist/jquery.js"
+				    "jquery.js": "jquery/dist/jquery.js",
+                    "chai.js": "chai/chai.js",
+                    "chai-jquery.js": "chai-jquery/chai-jquery.js"
                 }
             },
             sandbox: {

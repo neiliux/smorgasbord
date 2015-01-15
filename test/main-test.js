@@ -22,7 +22,9 @@ require.config({
     paths: {
         'jquery': 'test/bower/jquery',
         //'underscore': '../lib/underscore',
-        'load_css': 'test/main-css'
+        'load_css': 'test/main-css',
+        'chai': 'test/bower/chai',
+        'chai-jquery': 'test/bower/chai-jquery'
 	},
 
     shim: {
