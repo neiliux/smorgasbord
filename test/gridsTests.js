@@ -3,10 +3,10 @@ define(["jquery"], function ($) {
     "use strict";
     
     // TODO: Move this to helpers.
-    function getPseudoStylePropertyValue (selector, pseudoStyle, property) {
-        return window.getComputedStyle(
-	                   document.querySelector(selector), pseudoStyle)
-                        .getPropertyValue(property);
+    function getPseudoStylePropertyValue(selector, pseudoStyle, property) {
+        var item = document.querySelector(selector);
+        return window.getComputedStyle(item, pseudoStyle)
+            .getPropertyValue(property);
     }
     
     describe("Grids", function () {
@@ -21,13 +21,32 @@ define(["jquery"], function ($) {
         });
         
         describe('Grid container', function () {
-            it("has clear fix display property applied", function () {
-                var selector = "div.grid";
-                var propertyValue = getPseudoStylePropertyValue('div.grid', ':after', 'display');
-                // TODO: Replace with assertion library.
-                if (propertyValue !== "table") {
-                    throw new Error("Invalid display property");
-                }
+            var selector = "div.grid";
+            
+            describe(":before", function () {
+                var pseudoSelector = ":before";
+                
+                it("has clear fix display property applied", function () {
+                    var propertyValue = getPseudoStylePropertyValue(selector, pseudoSelector, "display");
+
+                    // TODO: Replace with assertion library.
+                    if (propertyValue !== "table") {
+                        throw new Error("Invalid display property");
+                    }
+                });
+            });
+            
+            describe(":after", function () {
+                var psuedoSelector = ":after";
+                
+                it("has clear fix display property", function () {
+                    var propertyValue = getPseudoStylePropertyValue(selector, psuedoSelector, "display");
+                    
+                    // TODO: Replace with assertion library.
+                    if (propertyValue !== "table") {
+                        throw new Error("Invalid display property");
+                    }
+                });
             });
         });
         

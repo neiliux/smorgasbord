@@ -17,7 +17,10 @@
 .btn.btn-lg {
   padding: 10px;
 }
-.grid:before,
+.grid:before {
+  content: '';
+  display: table;
+}
 .grid:after {
   content: '';
   display: table;
