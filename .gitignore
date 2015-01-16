@@ -3,3 +3,5 @@ bower_components/
 test/bower/
 test/smorgasbord-build.css
 sandbox/vendor/
+sandbox/fonts/
+test/fonts

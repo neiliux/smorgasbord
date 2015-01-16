@@ -12,7 +12,8 @@ module.exports = function (grunt) {
                 files: {
 				    "jquery.js": "jquery/dist/jquery.js",
                     "chai.js": "chai/chai.js",
-                    "chai-jquery.js": "chai-jquery/chai-jquery.js"
+                    "chai-jquery.js": "chai-jquery/chai-jquery.js",
+                    "../fonts": "fontawesome/fonts"
                 }
             },
             sandbox: {
@@ -20,7 +21,16 @@ module.exports = function (grunt) {
                     destPrefix: "sandbox/vendor"
                 },
                 files: {
-                    "angular.js": "angular/angular.js"
+                    "angular.js": "angular/angular.js",
+                    "../fonts": "fontawesome/fonts"
+                }
+            },
+            production: {
+                options: {
+                    destPrefix: "dist"
+                },
+                files: {
+                    "fonts": "fontawesome/fonts"
                 }
             }
         },
@@ -79,6 +89,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-contrib-watch");
     
     grunt.registerTask("default", ["bowercopy:test", "bowercopy:sandbox", "less:development", "karma"]);
-    grunt.registerTask("production", ["less:production"]);
+    grunt.registerTask("production", ["less:production", "bowercopy:production"]);
     grunt.registerTask("dev", ["bowercopy:test", "bowercopy:sandbox", "less:development", "karma", "devserver", "watch"]);
 };
