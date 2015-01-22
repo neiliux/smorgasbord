@@ -13,7 +13,8 @@ module.exports = function (grunt) {
 				    "jquery.js": "jquery/dist/jquery.js",
                     "chai.js": "chai/chai.js",
                     "chai-jquery.js": "chai-jquery/chai-jquery.js",
-                    "../fonts": "fontawesome/fonts"
+                    "../fonts": "fontawesome/fonts",
+                    "../fa.css": "fontawesome/css/font-awesome.css"
                 }
             },
             sandbox: {
@@ -22,7 +23,8 @@ module.exports = function (grunt) {
                 },
                 files: {
                     "angular.js": "angular/angular.js",
-                    "../fonts": "fontawesome/fonts"
+                    "../fonts": "fontawesome/fonts",
+                    "../fa.css": "fontawesome/css/font-awesome.css"
                 }
             },
             production: {
@@ -30,7 +32,8 @@ module.exports = function (grunt) {
                     destPrefix: "dist"
                 },
                 files: {
-                    "fonts": "fontawesome/fonts"
+                    "fonts": "fontawesome/fonts",
+                    "fa.css": "fontawesome/css/font-awesome.css"
                 }
             }
         },

@@ -7,6 +7,7 @@ module.exports = function (config) {
         files: [
             'test/main-test.js',
             'test/smorgasbord-build.css',
+            'test/fa.css',
             {pattern: 'test/main-css.js', included: false},
             {pattern: 'test/bower/*.js', included: false},
             {pattern: 'test/**/*Tests.js', included: false}
