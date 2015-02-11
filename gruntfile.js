@@ -3,7 +3,7 @@ module.exports = function (grunt) {
     "use strict";
     grunt.initConfig({
         pkg: grunt.file.readJSON("package.json"),
- 	
+
 	    bowercopy: {
             test: {
                 options: {
@@ -13,7 +13,8 @@ module.exports = function (grunt) {
 				    "jquery.js": "jquery/dist/jquery.js",
                     "chai.js": "chai/chai.js",
                     "chai-jquery.js": "chai-jquery/chai-jquery.js",
-                    "../fonts": "fontawesome/fonts"
+                    "../fonts": "fontawesome/fonts",
+                    "quasiExcerpt.js": "quasi-excerpt/src/quasiExcerpt.js"
                 }
             },
             sandbox: {
@@ -34,7 +35,7 @@ module.exports = function (grunt) {
                 }
             }
         },
-        
+
         less: {
             development: {
                 options: {
@@ -54,13 +55,13 @@ module.exports = function (grunt) {
                 }
             }
         },
-            
+
         karma: {
             unit: {
                 configFile: "karma.conf.js"
             }
         },
-        
+
         devserver: {
             server: {},
             options: {
@@ -69,7 +70,7 @@ module.exports = function (grunt) {
                 async: false
             }
         },
-        
+
         watch: {
             scripts: {
                 files: ['src/**/*', 'sandbox/**/*'],
@@ -79,7 +80,7 @@ module.exports = function (grunt) {
                 }
             }
         }
-        
+
     });
 
     grunt.loadNpmTasks("grunt-bowercopy");
@@ -87,7 +88,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-karma");
     grunt.loadNpmTasks("grunt-devserver");
     grunt.loadNpmTasks("grunt-contrib-watch");
-    
+
     grunt.registerTask("default", ["bowercopy:test", "bowercopy:sandbox", "less:development", "karma"]);
     grunt.registerTask("production", ["less:production", "bowercopy:production"]);
     grunt.registerTask("dev", ["bowercopy:test", "bowercopy:sandbox", "less:development", "karma", "devserver", "watch"]);

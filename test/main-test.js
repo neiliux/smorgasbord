@@ -23,7 +23,8 @@ require.config({
         //'underscore': '../lib/underscore',
         'load_css': 'test/main-css',
         'chai': 'test/bower/chai',
-        'chai-jquery': 'test/bower/chai-jquery'
+        'chai-jquery': 'test/bower/chai-jquery',
+        'quasiExcerpt': 'test/bower/quasiExcerpt'
 	  },
     shim: {
         'jquery': {
